@@ -8,7 +8,7 @@ export function renderUserBlock (favoriteItemsAmount) {
     'user-block',
     `
     <div class="header-container">
-      <img class="avatar" src="/img/avatar.png" alt="Wade Warren" />
+      <img class="avatar" src="img/avatar.png" alt="Wade Warren" />
       <div class="info">
           <p class="name">Wade Warren</p>
           <p class="fav">
