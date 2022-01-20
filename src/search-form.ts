@@ -1,25 +1,6 @@
 import { defaultCheckInDate, minCheckInDate, maxCheckOutDate, defaultCheckOutDate } from './dates.js';
 import { renderBlock } from './lib.js'
 
-// interface SearchFormData {
-//   city: string
-//   checkInDate: string
-//   checkOutDate: string
-//   maxPrice: number
-// }
-
-
-// document.getElementById('search-form').addEventListener('submit', (e) => {
-//   e.preventDefault();
-//   console.log('aaa');
-// })
-// let sorma = document.getElementById('search-form')
-// const getDataFromSearchForm = (e) => {
-//   e.preventDefault();
-//   console.log('ебой');
-  
-// }
-
 export function renderSearchFormBlock (checkInDate: string = defaultCheckInDate, checkOutDate: string = defaultCheckOutDate) {
 
   renderBlock(

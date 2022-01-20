@@ -10,7 +10,7 @@ const favoritesAmountObj = {
 localStorage.setItem('user', JSON.stringify(userObj));
 localStorage.setItem('favoritesAmount', JSON.stringify(favoritesAmountObj));
 
-const getDataFromLocalStorage = (key) => {
+const getDataFromLocalStorage = (key: string) => {
   return JSON.parse(localStorage.getItem(`${key}`))
 }
 
