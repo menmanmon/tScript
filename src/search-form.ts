@@ -1,7 +1,7 @@
 import { defaultCheckInDate, minCheckInDate, maxCheckOutDate, defaultCheckOutDate } from './dates.js';
 import { renderBlock } from './lib.js'
 
-export function renderSearchFormBlock (checkInDate = defaultCheckInDate, checkOutDate = defaultCheckOutDate) {
+export function renderSearchFormBlock (checkInDate: string = defaultCheckInDate, checkOutDate: string = defaultCheckOutDate) {
 
   renderBlock(
     'search-form-block',
