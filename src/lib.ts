@@ -1,9 +1,20 @@
-export function renderBlock (elementId, html) {
-  const element = document.getElementById(elementId)
-  element.innerHTML = html
+interface messInt {
+  text: string, 
+  type: string,
 }
 
-export function renderToast (message, action) {
+interface actionInt {
+  name?: string, 
+  handler: () => void
+}
+
+export function renderBlock (elementId: string, html: string): void {
+  const element: HTMLElement | null = document.getElementById(elementId)
+  if(element == null) return 
+  else element.innerHTML = html
+}
+
+export function renderToast (message: messInt | null, action: actionInt | null): void{
   let messageText = ''
   
   if (message != null) {
@@ -26,7 +37,7 @@ export function renderToast (message, action) {
       if (action != null && action.handler != null) {
         action.handler()
       }
-      renderToast(null)
+      renderToast(null, null)
     }
   }
 }

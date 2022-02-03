@@ -8,7 +8,7 @@ import { renderToast } from './lib.js'
 
 window.addEventListener('DOMContentLoaded', () => {
   renderUserBlock(getUserData.userName, getUserData.avatarUrl, getFavoritesAmount.favoritesAmount)
-  renderSearchFormBlock('2022-01-29', '2022-02-02')
+  renderSearchFormBlock()
   renderSearchStubBlock()
   renderToast(
     {text: 'Это пример уведомления. Используйте его при необходимости', type: 'success'},
@@ -17,19 +17,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
   interface SearchFormData {
     city: string
-    checkInDate: Date
-    checkOutDate: Date
+    checkInDate: string
+    checkOutDate: string
     maxPrice: number
   }
 
-  const searchForm = document.getElementById('search-form')
+  const searchForm = document.getElementById('search-form');
+  if(searchForm == null) return
   searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchData: SearchFormData = {
-      city: document.getElementById('city').value,
-      checkInDate: document.getElementById('check-in-date').value,
-      checkOutDate: document.getElementById('check-out-date').value,
-      maxPrice: +document.getElementById('max-price').value
+      city: (<HTMLInputElement>document.getElementById('city')).value,
+      checkInDate: (<HTMLInputElement>document.getElementById('check-in-date')).value,
+      checkOutDate: (<HTMLInputElement>document.getElementById('check-out-date')).value,
+      maxPrice: +(<HTMLInputElement>document.getElementById('max-price')).value,
     }
     console.log(searchData);
   })
